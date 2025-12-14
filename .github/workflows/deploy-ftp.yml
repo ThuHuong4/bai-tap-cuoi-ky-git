@@ -19,4 +19,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./project-2-php-ftp/
-          server-dir: ./  # Code sẽ được đẩy vào thư mục gốc của host
+          server-dir: ./www.thuhuong.somee.com/
