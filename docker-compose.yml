@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  # Service 1: Node.js
+  my-node-app:
+    build: ./project-1-node-render
+    ports:
+      - "3000:3000"  # Chạy ở localhost:3000
+
+  # Service 2: PHP
+  my-php-app:
+    build: ./project-2-php-ftp
+    ports:
+      - "8080:80"    # Map cổng 8080 máy ngoài vào cổng 80 container
