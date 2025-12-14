@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'project-2-php-ftp/**' # Chỉ chạy khi sửa code trong thư mục Project 2
+      - 'project-2-php-ftp/**'
 
 jobs:
   deploy:
@@ -19,4 +19,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./project-2-php-ftp/
-          server-dir: www.thuhuong.somee.com/
+          server-dir: ./www.thuhuong.somee.com/
+          # Dòng dưới này giúp tránh lỗi Access Denied khi xóa file
+          dangerous-clean-slate: false
