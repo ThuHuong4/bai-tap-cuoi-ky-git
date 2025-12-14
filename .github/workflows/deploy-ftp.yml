@@ -1,0 +1,22 @@
+name: Deploy Project 2 PHP to Somee
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'project-2-php-ftp/**' # Chỉ chạy khi sửa code trong thư mục Project 2
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Deploy to Somee Hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./project-2-php-ftp/
+          server-dir: ./  # Code sẽ được đẩy vào thư mục gốc của host
