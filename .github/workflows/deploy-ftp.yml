@@ -20,3 +20,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./project-2-php-ftp/
           server-dir: www.thuhuong.somee.com/
+          
+          # DÒNG QUAN TRỌNG NHẤT: Ra lệnh xóa sạch file cũ trước khi upload
+          dangerous-clean-slate: true
