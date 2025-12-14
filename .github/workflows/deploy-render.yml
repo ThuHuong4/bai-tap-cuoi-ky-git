@@ -1,0 +1,14 @@
+name: Deploy Project 1 to Render
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'project-1-node-render/**' # Chỉ chạy khi sửa code trong thư mục Project 1
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render Deploy
+        run: curl -X POST ${{ secrets.RENDER_HOOK_URL }}
