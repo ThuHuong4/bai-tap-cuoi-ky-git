@@ -15,10 +15,8 @@ jobs:
       - name: Deploy to Somee Hosting
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: 155.254.244.34
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./project-2-php-ftp/
           server-dir: ./www.thuhuong.somee.com/
-          # Dòng dưới này giúp tránh lỗi Access Denied khi xóa file
-          dangerous-clean-slate: false
