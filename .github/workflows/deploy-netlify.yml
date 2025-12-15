@@ -1,0 +1,13 @@
+# Nội dung file: .github/workflows/deploy-netlify.yml
+name: Netlify Frontend Deployment - CI/CD Netlify Platform
+on:
+  push:
+    branches:
+      - main 
+jobs:
+  test_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm Automatic Deployment
+        run: echo "Deployment for static site is automatically handled by Netlify integration."
